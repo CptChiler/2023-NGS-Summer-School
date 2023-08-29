@@ -28,12 +28,12 @@ flye --version
 
 __Reminder: You can also install specific versions of a tool!__
 * important for full reproducibility
-* e.g. `conda install flye==2.9.0`
-* per default, `conda` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
+* e.g. `mamba install flye==2.9.0`
+* per default, `mamba` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
 ### Create a folder for the hands-on work
 
-Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (lpatop, workstation):
+Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (laptop, workstation):
 
 ```sh
 # Switch to a path on your system where you want to store your data and results

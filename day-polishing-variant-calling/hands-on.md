@@ -73,14 +73,14 @@ medaka_consensus -i eco-filtered.fastq -d eco-consensus-racon.fasta -o eco-medak
 ```
 [Code](https://github.com/nanoporetech/medaka)
 
-**Note** that you should usually change the model parameter (`-m``) to whatever is most appropriate for your basecalling. Also note that `medaka_consensus`` is not the same thing as `medaka consensus`` (underscore vs space) - the former is a convenience script which does the entire process (including read mapping) while the latter is a subcommand of Medaka which only does the polishing step. (thx to [Ryan Wick for this explanation](https://github.com/rrwick/Trycycler/wiki/Polishing-after-Trycycler)).
+**Note** that you should usually change the model parameter (`-m`) to whatever is most appropriate for your basecalling. Also, note that `medaka_consensus` is not the same thing as `medaka consensus` (underscore vs space) - the former is a convenience script that does the entire process (including read mapping). At the same time, the latter is a subcommand of Medaka, which only does the polishing step. (thx to [Ryan Wick for this explanation](https://github.com/rrwick/Trycycler/wiki/Polishing-after-Trycycler)).
 
 
 ## Exercise
 
 Now, use again the _Salmonella_ data. You already calculated the assembly with `flye`. Remember, basecalling was done with the `FAST` basecalling model and with `Guppy` in 2019. 
 
-Now polish the genome using `racon` and `medaka`. Try to chose an approriate `medaka` model. You can use the following command to list `medaka` models:
+Now polish the genome using `racon` and `medaka`. Try to chose an appropriate `medaka` model. You can use the following command to list `medaka` models:
 
 ```bash
 medaka tools list_models | grep -v Default
