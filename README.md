@@ -1,33 +1,49 @@
 # Workshop Nanopore Bioinformatics
 
-A practical introduction to ONT & Data science for NGS Summerschool 2023.
+A practical introduction to ONT, Linux, and bacteria long-read genome reconstruction for NGS Summerschool.
 
 ## Schedule links for the workshop
 
-* [2023-08-28 - SOMEDAY: Welcome, Linux re-cap, QC Nanopore, _De novo_ assembly, mapping](#0)  
-* [2023-08-29 - SOMEDAY: Final day, Miscellaneous](#1)  
-
+* [XXXX-XX-XX - Someday: First day: Learn the basic (from raw reads to assembly)](#0)  
+* [XXXX-XX-XX - Someday: Final day: Miscellaneous](#1)  
 
 ## Instructors
 
-* Christian Blumenscheit and Martin Hölzer
+* ............
+
+## Summary Cheat Sheet
+
+[Cheat Sheet](cheat_sheet.md)
 
 ## Schedule
 
-> All events are held at Seestraße, room S06.A.01.011
+> All events are held at .............. 
 
-### <a name="0"></a> Tuesday, 2023-08-28
-| Time        | Welcome, Linux re-cap, QC Nanopore, _De novo_ assembly, mapping |
+### <a name="0"></a> Someday, XXXX-XX-XX
+| Time        | First day: Learn the basic (from raw reads to assembly) |
 | --          | --               |
-| 09:45-11:30 | Welcome & [introduction](day-welcome-linux-nanopore/general.md) |
-| 11:30-12:30 | Lunch break |
-| 12:45-15:30 | [Hands on 1](day-assembly-mapping/assembly.md) & [Hands on 2](day-polishing-variant-calling/polishing.md) |
+| 09:00-09:15 | [Welcome & introduction](lectures/1_welcome.md) |
+| 09:15-09:30 | [Linux crash course](lectures/2_linux.md) |
+| 09:30-10:00 | [Hands-on: Setup machines](lectures/3_setup.md) |
+| 10:00-10:15 | Coffee break |
+| 10:15-11:00 | [Hands-on: Data management & ONT QC](lectures/4_ONT_QC.md) |
+| 11:00-12:00 | [Hands-on: Long read assembly](lectures/5_LR_assembly.md) |
+| 12:00-13:00 | Lunch break |
+| 13:00-14:00 | [Hands-on: Polishing with long reads](lectures/6_LR_assembly.md) |
+| 14:00-14:30 | [Bonus: Polishing with short reads](lectures/7_SR_polishing.md) |
+| 14:30-15:00 | [Bonus: Assembly analysis](lectures/7_SR_polishing.md) |
 
-### <a name="1"></a> Wednesday, 2023-08-29
+### <a name="1"></a> Someday, XXXX-XX-XX
 | Time        | Final day & Miscellaneous |
 | --          | --               |
-| 09:00-10:30 | Debriefing Day 1 |
-| 10:30-12:00 | [Continue practical session](day-misc/README.md) ||
+| 09:00-09:30 | Setup & Debriefing Day 1 |
+| 09:00-11:45 | [Working on own sequencing data](cheat_sheet.md) |
+| 11:45-12:00 | Wrap up |
+
+### Additional content for further study
+
+* [Assembly polishing](day-polishing-variant-calling/README.md)
+* [Assembly stats, assembly comparison, assembly quality](day-misc/README.md)
 
 
 ## Acknowledgement
@@ -40,3 +56,4 @@ This course material is partly based on the following resources and on contribut
 * Workshop structure inspired by [https://github.com/cinemaparis/2023](https://github.com/cinemaparis/2023)
 * Some ONT intro slides from Josh Quick, [original](https://github.com/cinemaparis/2023/blob/main/day1-Tuesday/slides-Quick.pdf)
 * Nanopore long-read bioinformatics tutorial from [timkahlke](https://timkahlke.github.io/LongRead_tutorials)
+
