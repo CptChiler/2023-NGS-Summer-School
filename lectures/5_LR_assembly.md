@@ -47,8 +47,9 @@ minimap2 -ax map-ont flye_output_R10/assembly.fasta data/ONT_R10-filtered_reads.
 ```
 [Publication](https://doi.org/10.1093/bioinformatics/bty191) | [Code](https://github.com/lh3/minimap2)
 
+First, we need to convert the SAM file into a sorted BAM file to load it subsequently in IGV
+
 ```bash
-# first, we need to convert the SAM file into a sorted BAM file to load it subsequently in IGV
 samtools view -bS data/ONT_R10-mapping.sam | samtools sort -@ 4 > data/ONT_R10-mapping.sorted.bam  
 samtools index data/ONT_R10-mapping.sorted.bam
 ```
