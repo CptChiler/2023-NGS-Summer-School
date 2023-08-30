@@ -1,5 +1,7 @@
 # Workshop: Nanopore QC
 
+## Hands-on:
+
 **Note**: If internet connection is slow, we can also distribute the example data via an USB stick (ask your instructor ;) ). 
 
 ## 1. Find your data to work
