@@ -40,12 +40,6 @@ A practical introduction to ONT, Linux, and bacteria long-read genome reconstruc
 | 09:00-11:45 | [Working on own sequencing data](cheat_sheet.md) |
 | 11:45-12:00 | Wrap up |
 
-### Additional content for further study
-
-* [Assembly polishing](day-polishing-variant-calling/README.md)
-* [Assembly stats, assembly comparison, assembly quality](day-misc/README.md)
-
-
 ## Acknowledgement
 
 This course material is partly based on the following resources and on contributions from great people:
