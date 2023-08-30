@@ -11,7 +11,7 @@ We will continue first with the FASTQ data that should be located in your folder
 * the output folder is called `flye_output`
 * * we use `--meta` to activate the "expect metagenome/uneven coverage" mode which can help to recover full plasmid sequences
 * we tell the tool that the expected `--genome-size` is 5 Mbp
-* 
+  
 ```bash
 # run the assembly, this will take a bit time
 flye --nano-hq data/ONT_R10-filtered_reads.fastq.gz -o flye_output_R10 -t 8 --meta --genome-size 5M
