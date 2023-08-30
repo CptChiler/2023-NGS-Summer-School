@@ -30,9 +30,6 @@ ls -lah data/
 After downloading or copying the training data, we will save the path to the respective fastq file in a variable. This is important! We will use from now on this variable to refer to the read file when we start analyzing it (so we can forget about the path). In the code examples the $SAMPLE is the place to put your variable which are listed down below:
 
 ```bash
-## R9 ONT
-raw_ONT_R9 = /scratch/$USER/nanopore-workshop/data/R9.fastq.gz
-
 ## R10 ONT
 raw_ONT_R10 = /scratch/$USER/nanopore-workshop/data/R10.fastq.gz
 
@@ -44,10 +41,10 @@ raw_R2 = /scratch/$USER/nanopore-workshop/data/read_R2.fastq.gz
 #### Example:
 ```sh
 # To see the first read in R9 fastq file we run:
-head -n 4 $raw_ONT_R9
+head -n 4 $raw_ONT_R10
 
 # Note that the $ (dollar sign) makes a word to a variable this wont run:
-head -n 4 raw_ONT_R9
+head -n 4 raw_ONT_R10
 ```
 Always think about how to name your output files. It is advised to keep all infos into your file. For example:
 > [Sample]-[what have you done].[extension]
@@ -62,8 +59,9 @@ Always think about how to name your output files. It is advised to keep all info
 
 ```bash
 cd /scratch/$USER/nanopore-workshop
-NanoPlot -t 4 --fastq $SAMPLE --title "Raw reads" \
-    --color darkslategrey --N50 --loglength -f png -o nanoplot/raw
+
+NanoPlot -t 4 --fastq  $raw_ONT_R10 --title "Raw reads R10" \
+    --color darkslategrey --N50 --loglength -f png -o nanoplot/raw_R10
 ```
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
@@ -72,13 +70,15 @@ NanoPlot -t 4 --fastq $SAMPLE --title "Raw reads" \
 ### 2.2. Read filtering (Filtlong)
 
 ```bash
+cd /scratch/$USER/nanopore-workshop
+
 # Note: we use 1 kb as the minimum length cutoff as an example. For your "real" samples other parameters might be better. Do QC before! 
 filtlong --min_length 1000 --keep_percent 90 \
-    --target_bases 500000000 $SAMPLE | gzip > [Name it]-filtered_reads.fastq.gz
+    --target_bases 500000000  $raw_ONT_R10 | gzip > data/ONT_R10-filtered_reads.fastq.gz
 
 # Check the quality again:
-NanoPlot -t 4 --fastq [Name it]-filtered_reads --title "Filtered reads" \
-    --color darkslategrey --N50 --loglength -f png -o nanoplot/clean
+NanoPlot -t 4 --fastq data/ONT_R10-filtered_reads.fastq.gz --title "Filtered reads R10" \
+    --color darkslategrey --N50 --loglength -f png -o nanoplot/clean_R10
 ```
 [Code](https://github.com/rrwick/Filtlong)
 
