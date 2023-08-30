@@ -29,7 +29,7 @@ A practical introduction to ONT, Linux, and bacteria long-read genome reconstruc
 | 10:15-11:00 | [Hands-on: Data management & ONT QC](lectures/4_ONT_QC.md) |
 | 11:00-12:00 | [Hands-on: Long read assembly](lectures/5_LR_assembly.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | [Hands-on: Polishing with long reads](lectures/6_LR_assembly.md) |
+| 13:00-14:00 | [Hands-on: Polishing with long reads](lectures/6_LR_polishing.md) |
 | 14:00-14:30 | [Bonus: Polishing with short reads](lectures/7_SR_polishing.md) |
 | 14:30-15:00 | [Bonus: Assembly analysis](lectures/7_SR_polishing.md) |
 
