@@ -24,4 +24,4 @@ Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your b
 
 So, let's get started!
 
-Next: [Linux for Bioinformatics re-cap](2023-NGS-Summer-School/lectures/2_linux.md)
+Next: [Linux for Bioinformatics re-cap](2_linux.md)
