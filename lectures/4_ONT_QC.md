@@ -74,7 +74,7 @@ NanoPlot -t 4 --fastq $SAMPLE --title "Raw reads" \
 ```bash
 # Note: we use 1 kb as the minimum length cutoff as an example. For your "real" samples other parameters might be better. Do QC before! 
 filtlong --min_length 1000 --keep_percent 90 \
-    --target_bases 500000000 $SAMPLE > [Name it]-filtered_reads.fastq
+    --target_bases 500000000 $SAMPLE | gzip > [Name it]-filtered_reads.fastq.gz
 
 # Check the quality again:
 NanoPlot -t 4 --fastq [Name it]-filtered_reads --title "Filtered reads" \
