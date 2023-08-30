@@ -57,7 +57,8 @@ conda activate envs/medaka
 # If you are on the RKI HPC: due to restrictions it might be even difficult to run other Medaka models because 
 # they need to be downloaded first.
 
-medaka_consensus -i data/ONT_R10-filtered_reads.fastq.gz -d data/ONT_R10-consensus-racon.fasta -o ONT_R10-medaka -m r1041_e82_260bps_sup_v4.0.0 -t 8
+medaka_consensus -i data/ONT_R10-filtered_reads.fastq.gz -d data/ONT_R10-consensus-racon.fasta \
+   -o ONT_R10-medaka -m r1041_e82_260bps_sup_v4.0.0 -t 8
 
 # map to new consensus
 minimap2 -t 4 -ax map-ont ONT_R10-medaka/assembly.fasta data/ONT_R10-filtered_reads.fastq.gz > data/ONT_R10-consensus-medaka-mapping.sam
