@@ -1,10 +1,10 @@
 # Workshop: _De novo_ assembly and mapping
 
-## Hands-on
+## Hands-on:
 
 We will continue first with the FASTQ data that should be located in your folder `data/ONT_R10-filtered_reads.fastq.gz`. Remember, that you already length-filtered the data. Use this as an input for the _de novo_ assembly. Remember to activate your Conda environment or install the necessary tools if not available.
 
-### _De novo_ assembly (Flye)
+### 1. _De novo_ assembly (Flye)
 
 * use your quality-checked and filtered reads for input
 * note that we're using `--nano-hq` with newer ONT R10 chemistry and `--nano-raw` with older ONT R9 chemistry
@@ -23,7 +23,7 @@ While this is running, check the original publication and the GitHub repository 
 
 [Publication](https://doi.org/10.1038/s41587-019-0072-8) | [Code](https://github.com/fenderglass/Flye)
 
-### Visualization of the assembly (Bandage) -> not possible on HPC 
+### 2. Visualization of the assembly (Bandage) -> not possible on HPC 
 ```bash
 # open the GUI
 Bandage &
@@ -38,7 +38,7 @@ Bandage &
 
 __Tools that have a graphical user interface can cause problems on a cluster machine__.
 
-### Mapping (minimap2)
+### 3. Mapping (minimap2)
 
 Now, we want to map the long reads to the assembly you calculated to visualize them.
 
@@ -55,7 +55,7 @@ samtools index data/ONT_R10-mapping.sorted.bam
 ```
 Inspect the resulting SAM file. Check the [SAM format specification](https://samtools.github.io/hts-specs/SAMv1.pdf).
 
-### Visualization of the mapping (IGV)
+### 3.1. Visualization of the mapping (IGV)
 
 ```bash
 # start IGV browser and load the assembly (FASTA) and BAM file, inspect the output
@@ -68,7 +68,7 @@ igv &
 # ->  data/ONT_R10-mapping.sorted.bam
 ```
 
-### Alternative: Visualization of mapping (Tablet)
+### 3.2. Alternative: Visualization of mapping (Tablet)
 
 ```bash
 # open the GUI
