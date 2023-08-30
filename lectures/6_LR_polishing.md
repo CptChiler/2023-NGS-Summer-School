@@ -1,43 +1,30 @@
 # Workshop: Assembly polishing and variant calling
 
-## Hands-on
+## Hands-on:
 
-### Polishing
+### 1. Polishing
 
 Polish the assembly you produced with `flye`. Use the filtered long-read data. Do this in two steps: using `racon` followed by `medaka`. This will also involve mapping again the long reads to your calculated assemblies! 
 
-#### Mapping (minimap2)
-
-**You already did this mapping to look at the SAM/BAM file in IGV and/or tablet! If you still have the files, you dont need to redo the following steps!**
-
-```bash
-# map
-minimap2 -ax map-ont flye_output/assembly.fasta barcode01-filtered.fastq > barcode01-mapping.sam
-# first, we need to convert the SAM file into a sorted BAM file to load it subsequently in IGV
-samtools view -bS barcode01-mapping.sam | samtools sort -@ 4 > barcode01-mapping.sorted.bam  
-samtools index barcode01-mapping.sorted.bam
-```
-
-#### Assembly polishing (Racon)
+#### 1.1. Assembly polishing (Racon)
 
 ```bash
 # run racon, as input you need the reads, the mapping file, and the assembly you want to polish
-racon -t 4 barcode01-filtered.fastq barcode01-mapping.sam flye_output/assembly.fasta > barcode01-consensus-racon.fasta
+racon -t 8 data/ONT_R10-filtered_reads.fastq.gz data/ONT_R10-mapping.sorted.bam flye_output_R10/assembly.fasta > data/ONT_R10-consensus-racon.fasta
 
 # map to new consensus
-minimap2 -t 4 -ax map-ont barcode01-consensus-racon.fasta barcode01-filtered.fastq > barcode01-consensus-mapping.sam
+minimap2 -t 4 -ax map-ont ONT_R10-consensus-racon.fasta data/ONT_R10-filtered_reads.fastq.gz > data/ONT_R10-consensus-racon-mapping.sam
+samtools view -bS data/ONT_R10-consensus-racon-mapping.sam | samtools sort -@ 4 > data/ONT_R10-consensus-racon-mapping.sorted.bam  
+samtools index data/ONT_R10-racon-onsensus-mapping.sorted.bam
 
 # now look at it in tablet or IGV again. For IGV you have to convert to BAM again and index the mapping file!
 igv &
 
-tablet &
-# load mapping file as 'primary assembly'
-# ->  barcode01-consensus-mapping.sam
+# load assembly file as 'Genomes'
+# ->  data/ONT_R10-consensus-racon.fasta
 
-# load assembly file as 'Reference/consensus file'
-# ->  flye_output/assembly.fasta
-
-
+# load mapping file as 'File'
+# ->  data/ONT_R10-racon-onsensus-mapping.sorted.bam
 ```
 [Publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411768/) | [Code](https://github.com/isovic/racon)
 
@@ -68,11 +55,23 @@ conda activate envs/medaka
 # the performed basecalling! Here, we use some example model for a R10.4.1 run with 260 bp/s speed and SUP basecalling. 
 # This might to be adjusted based on your data! 
 # If you are on the RKI HPC: due to restrictions it might be even difficult to run other Medaka models because 
-# they need to be downloaded first. 
-medaka_consensus -i barcode01-filtered.fastq -d barcode01-consensus-racon.fasta -o barcode01-medaka -m r1041_e82_260bps_sup_v4.0.0 -t 4
+# they need to be downloaded first.
 
-# Exercise: look at it in tablet or IGV
-# Hint: first need a mapping to the new consensus again to generate the SAM/BAM file!
+medaka_consensus -i data/ONT_R10-filtered_reads.fastq.gz -d data/ONT_R10-consensus-racon.fasta -o ONT_R10-medaka -m r1041_e82_260bps_sup_v4.0.0 -t 8
+
+# map to new consensus
+minimap2 -t 4 -ax map-ont ONT_R10-medaka/assembly.fasta data/ONT_R10-filtered_reads.fastq.gz > data/ONT_R10-consensus-medaka-mapping.sam
+samtools view -bS data/ONT_R10-consensus-medaka-mapping.sam | samtools sort -@ 4 > data/ONT_R10-consensus-medaka-mapping.sorted.bam  
+samtools index data/ONT_R10-medaka-onsensus-mapping.sorted.bam
+
+# now look at it in tablet or IGV again. For IGV you have to convert to BAM again and index the mapping file!
+igv &
+
+# load assembly file as 'Genomes'
+# ->  ONT_R10-medaka/assembly.fasta
+
+# load mapping file as 'File'
+# ->  data/ONT_R10-medaka-onsensus-mapping.sorted.bam
 ```
 [Code](https://github.com/nanoporetech/medaka)
 
