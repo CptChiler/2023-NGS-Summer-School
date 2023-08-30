@@ -33,18 +33,15 @@ Opening an interactive shell on the RKI HPC:
 #start an interactive bash session using the default ressources
 srun --pty bash -i
 
-#start an interactive bash session using 8 CPUs, 40GB RAM, 30GB HDD
-srun --cpus-per-task=8 --mem=40GB --gres=local:30 --pty bash -i
+#start an interactive bash session using 8 CPUs, 32GB RAM, 30GB HDD reserved for 8 hours
+srun --time=6:00:00 --cpus-per-task=8 --mem=32GB --gres=local:30 --pty bash -i
 
-#start an interactive bash session using 10 CPUs, 80GB RAM, 50GB HDD, 1GPU
-srun --cpus-per-task=10 --mem=80GB --gres=local:50 --gpus=1 --pty bash -i
-
-#IMPORTANT to free the blocked resources after our work is done close the interactive shell via:
+#IMPORTANT to free the blocked resources after our work is done close the interactive shell type:
 exit
 ```
 Due to competing requests it may take some time until the requested resources can be provided by the system. Therefore, wait patiently until the prompt appears. Reducing requested resources might help as well.
 
-## Install mamba (if done already on your machine: skip)
+## Prepare working directory and prepare mamba/conda 
 
 * Mamba is a packaging manager that will help us to install bioinformatics tools and to handle their dependencies automatically
 * Mamba works together with the conda package manager, and makes installing packages faster
@@ -65,7 +62,7 @@ cd  nanopore-workshop
 * Set up mamba
 
 ```bash
-# Test if conda and mamba is installed
+# Test if conda and mamba is installed (should be rdy on HPC)
 conda --help
 mamba --help
 
