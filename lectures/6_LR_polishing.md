@@ -33,7 +33,7 @@ igv &
 * with the newest R10 chemistry and recent basecalling models, it seems that `racon` is also not necessary anymore and people switch to only polish via `Medaka`
 * with improvements in ONT accuracy, it might be even the case that long-read polishing is becoming more and more obsolete!
 
-### Assembly polishing and final consensus (Medaka)
+### 1.2. Assembly polishing and final consensus (Medaka)
 
 `Medaka` is not in your current `workshop` environment because it was conflicting with the other tools. That's why we need a separate Conda environment for `Medaka`:
 
