@@ -75,4 +75,4 @@ tablet &
 __Alternative ways to visualize such a mapping are given by (commercial software) such as Geneious or CLC Genomic Workbench.__
 
 
-Next: [Polishing with long reads](6_LR_polishing)
+Next: [Polishing with long reads](6_LR_polishing.md)
