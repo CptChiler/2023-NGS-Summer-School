@@ -55,14 +55,19 @@ Due to competing requests it may take some time until the requested resources ca
 # Switch to a directory with enough space
 cd /scratch/$USER
 
-# make a new folder called 'workshop'
-mkdir workshop
+# make a new folder called 'nanopore-workshop' (this is where we will work in)
+mkdir nanopore-workshop
 
 # switch to this folder
-cd workshop
+cd  nanopore-workshop
+```
 
-# Download mamba installer
-wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh"
+* Set up mamba
+
+```bash
+# Test if conda and mamba is installed
+conda --help
+mamba --help
 
 # ATTENTION: the space in your home directory might be limited (e.g. 10 GB) and per default conda installs tools into ~/.conda/envs
 # Thus, take care of your disk space!
@@ -70,22 +75,8 @@ wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambafor
 # mv ~/.conda /scratch/dot-conda
 # ln -s /scratch/dot-conda ~/.conda
 
-# Run installer
-bash Mambaforge-Linux-x86_64
-# Use space to scroll down the license agreement
-# then type 'yes'
-# accept the default install location with ENTER
-# when asked whether to initialize mamba type 'yes'
-
-# Now start a new shell or simply reload your current shell via
-bash
-
 # You should now be able to create environments, install tools and run them
-```
 
-* Set up mamba
-
-```bash
 # add repository channels for bioconda
 conda config --add channels defaults
 conda config --add channels bioconda
@@ -95,6 +86,13 @@ conda config --add channels conda-forge
 * Create and activate a new conda environment
 
 ```bash
+# Working directory
+cd /scratch/$USER/nanopore-workshop
+
+# create folder for enviroments
+# We want to save all programms locally to save space
+mkdir envs
+
 # -n parameter to specify the name
 mamba create -p envs/workshop
 
