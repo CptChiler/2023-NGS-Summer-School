@@ -78,4 +78,4 @@ medaka_consensus -i barcode01-filtered.fastq -d barcode01-consensus-racon.fasta 
 
 **Note** that you should usually change the model parameter (`-m`) to whatever is most appropriate for your basecalling. Also note that `medaka_consensus` is not the same thing as `medaka consensus` (underscore vs space) - the former is a convenience script which does the entire process (including read mapping) while the latter is a subcommand of Medaka which only does the polishing step. (thx to [Ryan Wick for this explanation](https://github.com/rrwick/Trycycler/wiki/Polishing-after-Trycycler)).
 
-Next: [Long-read Nanopore Introduction & Quality Control](nanopore.md)
+Next: [Polishing assembly with short reads](7_LR_polishing.md)

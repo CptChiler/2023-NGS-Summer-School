@@ -99,4 +99,4 @@ NanoPlot -t 4 --fastq barcode01-filtered.fastq --title "Filtered reads" \
 ```
 [Code](https://github.com/rrwick/Filtlong)
 
-Next: [Long-read Nanopore Introduction & Quality Control](nanopore.md)
+Next: [Long-read assembly](5_LR_assembly.md)

@@ -31,4 +31,4 @@ mamba install nanoplot
 NanoPlot reads.fq.gz ...
 ```
 
-Next: [Linux for Bioinformatics re-cap](lectures/3_setup.md)
+Next: [Setup for computing data](3_setup.md)

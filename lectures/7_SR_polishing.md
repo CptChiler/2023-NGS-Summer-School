@@ -7,7 +7,6 @@ If you also have short-read Illumina data corresponding to your Nanopore data. U
 get data
 ```
 
-
 ### Quick start
 (see https://github.com/rrwick/Polypolish/wiki/How-to-run-Polypolish for more details!)
 
@@ -18,3 +17,5 @@ bwa mem -t 16 -a draft.fasta reads_2.fastq.gz > alignments_2.sam
 polypolish_insert_filter.py --in1 alignments_1.sam --in2 alignments_2.sam --out1 filtered_1.sam --out2 filtered_2.sam
 polypolish draft.fasta filtered_1.sam filtered_2.sam > polished.fasta
 ```
+
+Next: [Assembly data analysis](8_Analysis.md)

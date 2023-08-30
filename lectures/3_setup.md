@@ -106,4 +106,4 @@ conda activate envs/workshop
 # Which is placed in a folder envs/workshop
 ```
 
-Next: [Long-read Nanopore Introduction & Quality Control](nanopore.md)
+Next: [Long-read Nanopore Introduction & Quality Control](4_ONT_QC.md)
